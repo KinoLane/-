@@ -37,6 +37,7 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
 
+import matplotlib.dates as mdates
 import numpy as np
 import pandas as pd
 
@@ -112,7 +113,7 @@ def ent_name(lam: float, arch: str) -> str:
 # style
 # --------------------------------------------------------------------------- #
 def paper_style(axis_label_size: float = 20.0, tick_size: float = 17.0,
-                title_size: float = 21.0, legend_size: float = 15.5) -> None:
+                title_size: float = 21.0, legend_size: float = 18.0) -> None:
     plt.rcParams.update({
         "font.family": "DejaVu Sans",
         "font.size": tick_size,
@@ -227,7 +228,9 @@ def monthly_returns(series: pd.Series) -> pd.Series:
 
 
 def cumulative(df: pd.DataFrame) -> pd.Series:
-    return (1.0 + df["ret_net"]).cumprod()
+    # the reference panels plot the cumulative *return* (the curve starts at
+    # 0.0; a final value of 3.0 means +300%), not the net value (1.0-based)
+    return (1.0 + df["ret_net"]).cumprod() - 1.0
 
 
 def have_experiment(dirs: Sequence[Path], exp: str) -> bool:
@@ -245,23 +248,38 @@ def grouped_bars(out_dir: Path, name: str, panel: dict, groups: Sequence[str],
     paper_style()
     fig, ax = plt.subplots(figsize=figsize)
     n_series = len(values)
-    width = 0.8 / max(n_series, 1)
+    # bar cluster width, x limits and y limits measured from the reference
+    # panels: the cluster is 0.18 data units per series (0.78 in total at most),
+    # sits on the x tick, and the y axis hugs the data with 7% headroom on top
+    total = min(0.78, 0.18 * max(n_series, 1))
+    width = total / max(n_series, 1)
     x = np.arange(len(groups))
     for k, (label, vals) in enumerate(values.items()):
         offs = (k - (n_series - 1) / 2.0) * width
-        ax.bar(x + offs, np.asarray(vals, dtype=np.float64), width=width * 0.92,
+        ax.bar(x + offs, np.asarray(vals, dtype=np.float64), width=width,
                label=label, color=colors[k % len(colors)], edgecolor="none", zorder=2)
     ax.set_xticks(x)
     ax.set_xticklabels([str(g) for g in groups])
+    ax.set_xlim(-0.5, len(groups) - 0.5)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     if ylim:
         ax.set_ylim(*ylim)
+    else:
+        flat = np.concatenate([np.asarray(v, dtype=np.float64) for v in values.values()])
+        flat = flat[np.isfinite(flat)]
+        if flat.size:
+            lo, hi = float(flat.min()), float(flat.max())
+            span = (hi - lo) or max(abs(hi), 1.0)
+            ax.set_ylim(0.0 if lo >= 0 else lo, hi + 0.07 * span)
     style_axes(ax)
-    # the reference keeps the bar legend *inside* the axes, on the top row
-    ax.legend(loc="upper center", ncol=ncol, frameon=False, borderaxespad=0.4,
-              columnspacing=1.2, handlelength=1.4, handletextpad=0.5)
-    fig.tight_layout()
+    # the reference keeps the bar legend *inside* the axes, on the top row.  It must be kept
+    # out of tight_layout: otherwise the wide 5-column legend shrinks the drawing area
+    # (ref fig2: axes 1192 px wide / 18 px right margin; with the legend laid out: 1037 / 144).
+    leg = ax.legend(loc="upper center", ncol=ncol, frameon=False, borderaxespad=0.0,
+                    columnspacing=1.0, handlelength=2.0, handletextpad=0.5, fontsize=17.0)
+    leg.set_in_layout(False)
+    fig.tight_layout(pad=0.7)
     save(fig, out_dir, name, panel)
 
 
@@ -300,8 +318,8 @@ def single_panel(out_dir: Path, name: str, panel: dict, series: Dict[str, pd.Dat
     ax.set_ylabel(ylabel)
     style_axes(ax)
     ax.legend(loc=legend_loc, ncol=legend_ncol, frameon=False,
-              columnspacing=1.2, handlelength=1.8)
-    fig.tight_layout()
+              columnspacing=1.2, handlelength=2.0)
+    fig.tight_layout(pad=0.7)
     panel = dict(panel, spans=series_spans(series))
     save(fig, out_dir, name, panel)
 
@@ -335,9 +353,11 @@ def figure_target_sweep(out_dir: Path, dirs: Sequence[Path]) -> None:
                 out[ARCH_LABEL[arch]] = vals
         return out
 
-    xlabels = [f"{m:.3f}" for m in MU_TARGETS]
+    # default matplotlib float format, exactly like the reference ticks
+    # ("0.016", "0.018", ..., "0.028")
+    xlabels = [f"{m:g}" for m in MU_TARGETS]
     specs = [
-        ("fig02_std_vs_target.png", "ann_vol", "standard deviation", (13.24, 6.03)),
+        ("fig02_std_vs_target.png", "ann_vol", "Standard deviation", (13.24, 6.03)),
         ("fig03_sharpe_vs_target.png", "sharpe", "Sharpe ratio", (13.25, 6.04)),
         ("fig04_tracking_error_vs_target.png", "tracking_error", "Tracking error",
          (13.27, 6.05)),
@@ -389,6 +409,21 @@ def figure_cumulative_at_target(out_dir: Path, dirs: Sequence[Path], mu: float =
 # --------------------------------------------------------------------------- #
 # panels 8-9: entropy sweep
 # --------------------------------------------------------------------------- #
+def mean_entropy_by_lambda(dirs: Sequence[Path]) -> Dict[float, float]:
+    """Mean achieved portfolio entropy (nats) of the recurrent nets per lambda.
+
+    This is the quantity the reference panels put on the x axis of Fig8 and in
+    the sub-caption of Fig9 ("Cumulative return graphs for E = 2.55").
+    """
+    out: Dict[float, float] = {}
+    for lam in ENT_LAMBDAS:
+        vals = [portfolio_entropy(dirs, ent_name(lam, a)) for a in ENT_ARCHS]
+        vals = [v for v in vals if np.isfinite(v)]
+        if vals:
+            out[lam] = float(np.mean(vals))
+    return out
+
+
 def figure_entropy_sweep(out_dir: Path, dirs: Sequence[Path]) -> None:
     if not dirs:
         return
@@ -415,7 +450,12 @@ def figure_entropy_sweep(out_dir: Path, dirs: Sequence[Path]) -> None:
     xlabels = []
     for lam in ENT_LAMBDAS:
         vals = entropies.get(lam) or []
-        xlabels.append(f"{np.mean(vals):.2f}" if vals else f"lam={lam:g}")
+        if vals:
+            # reference ticks are the round(mean entropy, 2) values in the
+            # default float format: 2.55, 2.6, 2.65, 2.7, 2.75
+            xlabels.append(f"{round(float(np.mean(vals)), 2):g}")
+        else:
+            xlabels.append(f"lam={lam:g}")
     values = {}
     for arch in ENT_ARCHS:
         vals = []
@@ -452,14 +492,18 @@ def figure_entropy_sweep(out_dir: Path, dirs: Sequence[Path]) -> None:
 
     # two stacked panels: no diversification vs the default regularisation
     panels_series = []
-    for lam, caption in ((0.0, "(a) cumulative return, no entropy term"),
-                         (0.002, "(b) cumulative return, default entropy term")):
+    ent_mean = mean_entropy_by_lambda(dirs)
+    for lam, fallback in ((0.0, "no entropy term"),
+                          (0.002, "default entropy term")):
         s = {}
         for arch in ENT_ARCHS:
             df = load_returns(dirs, ent_name(lam, arch))
             if df is not None and not df.empty:
                 s[ARCH_LABEL[arch]] = df
         if s:
+            e = ent_mean.get(lam)
+            caption = (f"Cumulative return graphs for E = {e:g}" if e is not None
+                       else f"cumulative return, {fallback}")
             panels_series.append((lam, caption, s))
     if not panels_series:
         print("  !! no entropy cumulative series, skipping fig09")
@@ -470,10 +514,10 @@ def figure_entropy_sweep(out_dir: Path, dirs: Sequence[Path]) -> None:
         line_panel(ax, s, ENT_COLORS)
         ax.set_ylabel("Cumulative return")
         ax.set_xlabel("Time")
-        ax.legend(loc="upper left", ncol=1, frameon=False, handlelength=1.8)
+        ax.legend(loc="upper left", ncol=1, frameon=False, handlelength=2.0)
         # the reference carries a sub-caption line under each panel
         ax.text(0.5, -0.16, caption, transform=ax.transAxes, ha="center", va="top")
-    fig.tight_layout(rect=(0.0, 0.05, 1.0, 1.0))
+    fig.tight_layout(rect=(0.0, 0.05, 1.0, 1.0), pad=0.7)
     save(fig, out_dir, "fig09_entropy_cumulative_return.png", {
         "reference": "Fig9",
         "metric": "cumulative net return by entropy level",
@@ -563,7 +607,8 @@ def tree_name(estimator: str, mu: float) -> Optional[str]:
 
 
 def figure_tree_baseline(out_dir: Path, dirs: Sequence[Path], mu: float,
-                         fname: str, reference: str) -> None:
+                         fname: str, reference: str,
+                         figsize: Tuple[float, float] = (13.60, 6.26)) -> None:
     """Fig13/14: AdaBoost, the LSTM reference and XGBoost at one target return."""
     if not dirs:
         return
@@ -594,7 +639,7 @@ def figure_tree_baseline(out_dir: Path, dirs: Sequence[Path], mu: float,
         "source": "results/csi300_mu_sweep* + results/csi300_tree_baselines*",
         "experiments": used,
     }
-    single_panel(out_dir, fname, panel, series, TREE_COLORS, (13.60, 6.26),
+    single_panel(out_dir, fname, panel, series, TREE_COLORS, figsize,
                  legend_ncol=1, legend_loc="upper left")
 
 
@@ -645,9 +690,12 @@ def figure_out_of_sample_return(
                     marker="o", markersize=3.2)
         ax.set_ylabel("Portfolio return")
         ax.set_xlabel("Time")
+        # reference ticks: every second month, labelled "%b-%y" (Aug-23, ...)
+        ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b-%y"))
         style_axes(ax)
         ax.legend(loc="upper left", frameon=False, ncol=1)
-    fig.tight_layout()
+    fig.tight_layout(pad=0.7)
     save(fig, out_dir, "fig10_out_of_sample_return.png", {
         "reference": "Fig10",
         "metric": "realised monthly net return",
@@ -693,6 +741,21 @@ README_TEMPLATE = """# 复刻图（用我们自己的实验结果画）
 * 柱状图（Fig2/3/4/8）图例在坐标区**内部顶行**、每组 5 根柱子从左到右即上面的配色顺序；
   折线图（Fig5/11/12/13/14）图例在左上角。
 * 画布尺寸按对照图逐张量取（如 Fig2 = 13.24×6.03 in，Fig9 = 13.35×12.44 in）。
+* 字号照抄对照图的实测值：刻度 17 pt、轴标题 20 pt、**折线图图例 18 pt、柱状图图例 17 pt**，
+  图例色块长 = 2.0 个字号（对照图图例的行距 ≈ 1.5 × 字号，Fig5 实测 37.2 px = 18 pt，
+  与我们的 37.1 px 一致）。
+* 柱状图：柱簇总宽 = min(0.78, 0.18×系列数) 个横轴单位、柱子紧邻（间隙 0），
+  x 轴范围 = (-0.5, 组数−0.5)，y 轴顶部 = max + 7% 极差、底部 = 0（全为正时柱子贴底）；
+  图例 `loc='upper center'` 且贴住轴顶（`borderaxespad=0`）、列间距 `columnspacing=1.0`，
+  且**不参与 `tight_layout`**（`set_in_layout(False)`）—— 否则居中的 5 列宽图例会把绘图区
+  压窄 ≈160 px（对照图实测绘图区宽 1192 px，我们设了 `set_in_layout(False)` 后为 1193 px）。
+* 折线图：y 轴沿用 matplotlib 默认的 5% 边距；**纵轴是 0 起算的累计收益**
+  （Π(1+r)−1），不是从 1 起算的净值 —— 与对照图一致（对照图的刻度里有 0.0）。
+* 横轴刻度沿用 matplotlib 的默认浮点格式（`0.016` … `0.028`；Fig8 是 `2.55` … `2.75`）；
+  Fig10 的日期刻度为 `%b-%y` 且每 2 个月一格（Aug-23、Oct-23 …），与对照图一致。
+* 四周留白由 `tight_layout(pad=0.7)` 控制（对照图实测约 16–18 px）；左右留白会随
+  坐标轴两端的标签浮动 —— 折线图的横轴末端若被最后一个刻度标签压住，标签悬出轴外，
+  留白就会变宽（详见下面第 11 条）。
 
 ## 与对照图的差别（诚实说明）
 
@@ -707,11 +770,35 @@ README_TEMPLATE = """# 复刻图（用我们自己的实验结果画）
 4. **Fig10 的两个面板**：对照图里左右两块的差别（窗口？标的？参数？）无法从图上看出来，
    我们改成**同一 11 个月窗口**、目标收益最低档（μ=0.016）与最高档（μ=0.028）的对比，
    并在 `panels.json` 的 `assumption` 字段里写明。
-5. **Fig9 的小标题**：对照图每块面板下方有一行 LaTeX 小标题（`(a) …`），我们用等价的
-   文字放在同样的位置，正文内容换成本实验的说法。
+5. **Fig9 的小标题**：对照图每块面板下方有一行小标题，格式是
+   `Cumulative return graphs for E = 2.55`（E 为该档实际实现的组合熵），我们照这个格式写，
+   但把 E 换成我们这一档的实测平均熵；对照图第二块的小标题被画布裁掉了，我们两块都画。
 6. **指标定义**：波动 / 夏普 / 跟踪误差都在「三折首尾相接的日度净收益」上重算，
    与 `report/pooled.csv` 的口径一致（`e2e_portfolio.metrics.compute_metrics`，
    年化因子 252；跟踪误差 = std(组合-基准)×√252）。
+7. **纵轴口径**：对照图的折线图纵轴是 0 起算的累计收益，我们原先画的是从 1 起算的净值，
+   现已改成同样的 0 起算口径（形状不变，刻度整体下移 1.0）。
+8. **Fig8 的柱子**：对照图里所有夏普都为正、柱子贴住下边界；我们的夏普在三折上跨零
+   （−0.32 … +0.30，主要来自 2020–2021 折的普遍为负，这是真实的样本外结果，
+   见 §9.12.1），所以下边界落在最小值上、柱高有正有负。其他几何量（柱簇宽度、x 轴范围、
+   顶部 7% 留白、图例 18 pt / 色块 2.0 字号）已按对照图对齐。
+9. **对照图自身的两处不一致**（我们没有照抄）：a) Fig10 的字号明显小于其余图
+   （实测约 11 pt 对比 17 pt），我们保持全套统一；b) Fig2/3/4 的柱簇整体右移了一个柱宽
+   （柱簇中心落在 1.5、2.5 … 而不是 1、2 …），我们按 matplotlib 的正常做法让柱簇居中。
+10. **数据量级**：对照图的累计收益到 +300% 量级、测试区间 2016–2023，我们的样本外区间
+    是 2018–2026，曲线形状与终点因此不可比；本仓库只保证「同样的图、同样的口径、
+    同样的版式」，数字本身来自我们自己的三折 walk-forward 结果。
+11. **折线图的右侧留白（44 px vs 对照图 17 px）—— 已查明是数据端点造成的，不是版式差异**：
+    我们的样本外区间止于 2026-08-20，matplotlib 默认的 5% 横轴边距把视窗推到 2027-01-01，
+    于是最后一格「2027」年刻度正好落在坐标区右缘、标签有一半悬在轴外，`tight_layout`
+    必须为它留宽（16.5 px pad + ≈27 px 悬出 = 44 px，与实测逐像素闭合）；对照图数据止于
+    2023 年中，末刻度「2023」深处轴内，所以只需 17 px。两边除留白外的刻度要素实测一致：
+    刻度定位（年度 `AutoDateLocator`）、刻度字号（末刻度墨迹宽 58 vs 60 px）、
+    图例版面（左上角、单列 5 行、行距 37.1 vs 37.2 px）、无网格线。
+12. **左侧留白相差 15 px（对照图坐标区左缘 x≈119，我们 x≈134）**：两边的纵轴标题都是
+    `"Cumulative return"`（OCR 复核一致）、左缘都在画布 x≈15，差值来自纵轴刻度标签块的
+    宽度（对照 103 px vs 我们 117 px）叠加 `tight_layout` 的分配，属数据驱动的派生量，
+    同样不是版式差异。
 
 ## 重新生成
 
@@ -790,7 +877,8 @@ def main() -> int:
     figure_tree_baseline(out_dir, list(mu_dirs) + list(tree_dirs), 0.020,
                          "fig13_adaboost_xgboost_mu020.png", "Fig13")
     figure_tree_baseline(out_dir, list(mu_dirs) + list(tree_dirs), 0.022,
-                         "fig14_adaboost_xgboost_mu022.png", "Fig14")
+                         "fig14_adaboost_xgboost_mu022.png", "Fig14",
+                         figsize=(13.63, 6.27))
 
     write_docs(out_dir, args.reference_dir)
     expected = 11

@@ -225,8 +225,8 @@
       "metric": "cumulative net return by entropy level",
       "x": "time",
       "panels": [
-        "(a) cumulative return, no entropy term",
-        "(b) cumulative return, default entropy term"
+        "Cumulative return graphs for E = 2.68201",
+        "Cumulative return graphs for E = 2.54876"
       ],
       "series": [
         "RNN+MCVaR",
@@ -234,12 +234,12 @@
         "GRU+MCVaR"
       ],
       "spans": {
-        "(a) cumulative return, no entropy term": {
+        "Cumulative return graphs for E = 2.68201": {
           "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
           "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
           "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
         },
-        "(b) cumulative return, default entropy term": {
+        "Cumulative return graphs for E = 2.54876": {
           "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
           "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
           "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
