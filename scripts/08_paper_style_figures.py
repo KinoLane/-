@@ -1,5 +1,12 @@
 """Paper-style figures (11 charts) built from our own CSI 300 experiment runs.
 
+.. note::
+   **Superseded** by ``scripts/09_reference_figures.py``, which draws the delivered
+   set into ``results/figures_reference/`` from the dedicated sweep grids.  The
+   charts this script writes are an earlier layout attempt (``v1`` falls back to
+   whatever grids happened to be finished), so do not compare them against
+   ``D:\\figures`` and do not treat them as a deliverable.
+
 The reference figures live in ``D:\\figures``.  This script reproduces their
 *layout and style* (grouped bars / line charts with a single legend row on top,
 large fonts, boxed axes) with our own measured results.
@@ -16,6 +23,9 @@ Two data sources are supported:
 Usage::
 
     python scripts/08_paper_style_figures.py --out D:\\金创\\figures_ours
+
+The ``--out`` folder above is where the (superseded) draft charts live; the
+delivered set is written by ``scripts/09_reference_figures.py``.
 """
 from __future__ import annotations
 
