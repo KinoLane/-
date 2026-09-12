@@ -1,0 +1,2 @@
+experiment,fold,selection,encoder_sha256,n_periods,n_valid,score_std,score_spread,spar_thresh,spread_below_thresh,pi_support,pi_pr,cap_budget,fill_periods,cap_sum,book_n,book_pr
+full_musigma,f3_2022_2026,sparsemax,a66883a3e9bbfcae,55,118.92727272727272,0.06503694831497424,0.10439212109582581,0.008409274473691844,0.0,26.527272727272727,17.717999174513935,1.5528796781193126,0.0,1.5528796800049762,14.290909090909091,10.962627275881818

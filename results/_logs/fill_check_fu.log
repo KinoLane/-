@@ -1,0 +1,5 @@
+[run ] 1 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_fill_fix_check_fu
+[run ] experiments: full
+[run ] folds: f2_2020_2021 | workers=1
+[  1/1] ok   full               f2_2020_2021     57.6min  eta   0.0min  sharpe +0.27 ann +3.92% mdd -11.94%
+[done] 1/1 ok in 57.6 min

@@ -1,0 +1,6 @@
+[run ] 2 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_fill_fix_check_abl
+[run ] experiments: full_nocost, full_quad
+[run ] folds: f2_2020_2021 | workers=2
+[  1/2] ok   full_quad          f2_2020_2021      5.6min  eta   5.7min  sharpe +0.38 ann +9.97% mdd -34.33%
+[  2/2] ok   full_nocost        f2_2020_2021     12.6min  eta   0.0min  sharpe +0.42 ann +9.64% mdd -20.49%
+[done] 2/2 ok in 12.8 min

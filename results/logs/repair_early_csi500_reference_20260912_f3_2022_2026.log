@@ -1,0 +1,14 @@
+[run ] 4 jobs -> D:\金创\e2e_meancvar\results\csi500_reference_20260912
+[run ] experiments: ew, meancvar_hist, mu020_lstm, full
+[run ] folds: f3_2022_2026 | workers=3
+[  1/4] ok   ew                 f3_2022_2026      0.9min  eta   3.1min  sharpe -0.20 ann -3.90% mdd -39.12%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  2/4] ok   meancvar_hist      f3_2022_2026      1.2min  eta   1.3min  sharpe -0.38 ann -9.36% mdd -36.97%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  3/4] ok   mu020_lstm         f3_2022_2026     15.4min  eta   5.2min  sharpe -0.65 ann -10.43% mdd -45.95%
+[  4/4] ok   full               f3_2022_2026     29.5min  eta   0.0min  sharpe +0.07 ann +1.20% mdd -32.00%
+[done] 4/4 ok in 30.5 min

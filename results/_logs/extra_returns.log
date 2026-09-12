@@ -1,0 +1,7 @@
+[run ] 3 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_extra_returns
+[run ] experiments: full
+[run ] folds: f1_2018_2019, f2_2020_2021, f3_2022_2026 | workers=3
+[  1/3] ok   full               f1_2018_2019      7.3min  eta  15.0min  sharpe -0.23 ann -3.75% mdd -29.01%
+[  2/3] ok   full               f2_2020_2021     15.9min  eta   8.0min  sharpe +0.46 ann +9.62% mdd -19.28%
+[  3/3] ok   full               f3_2022_2026     17.4min  eta   0.0min  sharpe +0.40 ann +6.43% mdd -30.19%
+[done] 3/3 ok in 17.6 min

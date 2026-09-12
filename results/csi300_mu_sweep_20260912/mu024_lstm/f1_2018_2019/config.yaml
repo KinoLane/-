@@ -1,0 +1,118 @@
+data:
+  root: D:\金创\findata
+  index: csi300
+  top_liquidity: 120
+  exclude_st: true
+  exclude_limit_locked: true
+  start_date: null
+  end_date: null
+  cache_dir: cache
+features:
+  lookback: 60
+  clip: 3.0
+  short_window: 5
+  mid_window: 20
+  long_window: 60
+  include_daily_return: false
+model:
+  arch: lstm
+  hidden_size: 64
+  num_layers: 1
+  dropout: 0.1
+  head_hidden: 64
+  scenario_mode: gaussian
+  num_scenarios: 60
+  sigma_init: 0.08
+  sigma_min: 0.005
+  sigma_max: 0.6
+  selection: sparsemax
+  topk: 25
+  temperature_init: 1.0
+  learn_temperature: true
+  score_mode: head
+  score_lambda_sigma: 0.5
+  score_lambda_cvar: 0.5
+opt:
+  alpha: 0.95
+  gamma: 0.1
+  lam_turnover: 0.0015
+  lam_div: 0.002
+  diversify: entropy
+  y_max: 0.1
+  mu_target: 0.024
+  solver: SCS
+  solver_kwargs: {}
+  differentiable: true
+loss:
+  l_pred: 0.1
+  l_decision: 1.0
+  l_tail: 0.5
+  l_turnover: 1.0
+  l_sparse: 0.1
+  pred_kind: nll
+  annual_scale: 12.0
+  cost_per_unit_turnover: 0.0015
+train:
+  epochs: 30
+  batch_size: 4
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_clip: 5.0
+  patience: 6
+  min_epochs: 4
+  device: cpu
+  seed: 20240101
+  num_threads: 3
+  max_train_periods_per_epoch: 0
+  val_metric: loss
+backtest:
+  cost_bps: 15.0
+  rebalance: monthly
+  rebalance_every: 20
+  return_kind: daily
+folds:
+- name: f1_2018_2019
+  train_start: '2010-01-01'
+  train_end: '2016-12-31'
+  val_start: '2017-01-01'
+  val_end: '2017-12-31'
+  test_start: '2018-01-01'
+  test_end: '2019-12-31'
+- name: f2_2020_2021
+  train_start: '2010-01-01'
+  train_end: '2018-12-31'
+  val_start: '2019-01-01'
+  val_end: '2019-12-31'
+  test_start: '2020-01-01'
+  test_end: '2021-12-31'
+- name: f3_2022_2026
+  train_start: '2010-01-01'
+  train_end: '2020-12-31'
+  val_start: '2021-01-01'
+  val_end: '2021-12-31'
+  test_start: '2022-01-01'
+  test_end: '2026-12-31'
+experiments:
+- mu016_lstm
+- mu016_gru
+- mu016_rnn
+- mu018_lstm
+- mu018_gru
+- mu018_rnn
+- mu020_lstm
+- mu020_gru
+- mu020_rnn
+- mu022_lstm
+- mu022_gru
+- mu022_rnn
+- mu024_lstm
+- mu024_gru
+- mu024_rnn
+- mu026_lstm
+- mu026_gru
+- mu026_rnn
+- mu028_lstm
+- mu028_gru
+- mu028_rnn
+results_dir: results
+run_name: csi300_mu_sweep_20260912

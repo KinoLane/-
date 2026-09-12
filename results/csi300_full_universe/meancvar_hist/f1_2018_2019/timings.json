@@ -1,0 +1,7 @@
+{
+  "backtest_seconds": 17.968763828277588,
+  "solve_forward": 16.33771324157715,
+  "solve_backward": 0.0,
+  "solve_calls": 24,
+  "solve_failures": 0
+}

@@ -1,0 +1,8 @@
+[run ] 2 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_tree_baselines_20260912
+[run ] experiments: adaboost_mcvar, adaboost_mcvar_mu022
+[run ] folds: f2_2020_2021 | workers=3
+[tree] adaboost: cached 199 periods x 23281 samples
+[tree] adaboost: cached 199 periods x 23281 samples
+[  1/2] ok   adaboost_mcvar     f2_2020_2021      5.3min  eta   5.4min  sharpe +0.76 ann +22.56% mdd -25.01%
+[  2/2] ok   adaboost_mcvar_mu022 f2_2020_2021      5.3min  eta   0.0min  sharpe +0.76 ann +22.56% mdd -25.01%
+[done] 2/2 ok in 5.4 min

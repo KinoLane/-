@@ -1,0 +1,15 @@
+{
+  "train_seconds": 599.4944491386414,
+  "epochs_run": 10,
+  "best_epoch": 3,
+  "stopped_early": 1,
+  "layer_failures": 0,
+  "layer_forward": 238.15361618995667,
+  "layer_backward": 0.0,
+  "layer_calls": 1420,
+  "backtest_seconds": 9.974710464477539,
+  "solve_forward": 247.3630130290985,
+  "solve_backward": 0.0,
+  "solve_calls": 1475,
+  "solve_failures": 0
+}

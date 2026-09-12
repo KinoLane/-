@@ -1,0 +1,46 @@
+[run ] 14 jobs -> D:\金创\e2e_meancvar\results\csi300_mu_sweep_ext_20260912
+[run ] experiments: mu016_mlp, mu016_rbfn, mu018_mlp, mu018_rbfn, mu020_mlp, mu020_rbfn, mu022_mlp, mu022_rbfn, mu024_mlp, mu024_rbfn, mu026_mlp, mu026_rbfn, mu028_mlp, mu028_rbfn
+[run ] folds: f3_2022_2026 | workers=3
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  1/14] ok   mu016_mlp          f3_2022_2026      7.4min  eta  97.7min  sharpe +0.80 ann +12.38% mdd -20.42%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  2/14] ok   mu018_mlp          f3_2022_2026     12.4min  eta  74.8min  sharpe -0.19 ann -4.75% mdd -51.06%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  3/14] ok   mu016_rbfn         f3_2022_2026     14.8min  eta  54.7min  sharpe -0.06 ann -1.13% mdd -40.68%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  4/14] ok   mu020_mlp          f3_2022_2026     15.4min  eta  69.6min  sharpe +0.30 ann +4.84% mdd -29.81%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  5/14] ok   mu020_rbfn         f3_2022_2026     15.8min  eta  55.2min  sharpe -0.05 ann -1.10% mdd -40.59%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  6/14] ok   mu022_mlp          f3_2022_2026     12.8min  eta  54.2min  sharpe -0.18 ann -2.71% mdd -25.78%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  7/14] ok   mu018_rbfn         f3_2022_2026     36.3min  eta  43.9min  sharpe -0.05 ann -1.08% mdd -45.13%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  8/14] ok   mu022_rbfn         f3_2022_2026     14.6min  eta  33.9min  sharpe -0.06 ann -1.13% mdd -40.67%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  9/14] ok   mu024_mlp          f3_2022_2026      7.1min  eta  26.5min  sharpe -0.15 ann -3.97% mdd -54.71%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[ 10/14] ok   mu026_mlp          f3_2022_2026      8.1min  eta  21.3min  sharpe -0.15 ann -4.01% mdd -54.36%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[ 11/14] ok   mu024_rbfn         f3_2022_2026     14.3min  eta  15.9min  sharpe -0.06 ann -1.14% mdd -40.69%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[ 12/14] ok   mu028_mlp          f3_2022_2026     13.7min  eta  11.2min  sharpe +0.42 ann +6.31% mdd -24.44%
+[ 13/14] ok   mu026_rbfn         f3_2022_2026     24.2min  eta   5.5min  sharpe -0.06 ann -1.14% mdd -40.72%
+[ 14/14] ok   mu028_rbfn         f3_2022_2026     13.8min  eta   0.0min  sharpe -0.05 ann -1.04% mdd -40.59%
+[done] 14/14 ok in 72.0 min

@@ -1,0 +1,40 @@
+[run ] 36 jobs -> D:\½ğ´´\e2e_meancvar\results\csi300_entropy_sweep_20260912
+[run ] experiments: ent010_lstm, ent010_gru, ent010_rnn, ent020_lstm, ent020_gru, ent020_rnn, ent050_lstm, ent050_gru, ent050_rnn, ent100_lstm, ent100_gru, ent100_rnn
+[run ] folds: f1_2018_2019, f2_2020_2021, f3_2022_2026 | workers=2
+[  1/36] ok   ent010_lstm        f2_2020_2021      8.1min  eta 286.3min  sharpe -0.12 ann -2.36% mdd -20.90%
+[  2/36] ok   ent010_lstm        f1_2018_2019      8.7min  eta 149.3min  sharpe +0.09 ann +1.86% mdd -26.25%
+[  3/36] ok   ent010_gru         f1_2018_2019      5.7min  eta 159.3min  sharpe +0.45 ann +9.72% mdd -26.89%
+[  4/36] ok   ent010_lstm        f3_2022_2026     11.9min  eta 160.7min  sharpe -0.34 ann -6.80% mdd -31.37%
+[  5/36] ok   ent010_gru         f2_2020_2021      9.5min  eta 149.0min  sharpe -0.35 ann -7.79% mdd -21.60%
+[  6/36] ok   ent010_rnn         f1_2018_2019      6.3min  eta 151.4min  sharpe +0.30 ann +6.77% mdd -25.19%
+[  7/36] ok   ent010_gru         f3_2022_2026     12.3min  eta 134.4min  sharpe +0.13 ann +2.39% mdd -39.81%
+[  8/36] ok   ent010_rnn         f2_2020_2021      6.9min  eta 130.0min  sharpe +0.76 ann +20.36% mdd -28.05%
+[  9/36] ok   ent010_rnn         f3_2022_2026      5.7min  eta 114.4min  sharpe +0.10 ann +2.47% mdd -46.28%
+[ 10/36] ok   ent020_lstm        f1_2018_2019      7.0min  eta 114.7min  sharpe +0.30 ann +5.33% mdd -27.44%
+[ 11/36] ok   ent020_lstm        f2_2020_2021     11.1min  eta 111.9min  sharpe -0.02 ann -0.47% mdd -18.35%
+[ 12/36] ok   ent020_gru         f1_2018_2019      5.9min  eta 110.3min  sharpe +0.23 ann +3.98% mdd -28.93%
+[ 13/36] ok   ent020_lstm        f3_2022_2026     11.4min  eta  98.2min  sharpe +0.22 ann +3.35% mdd -29.56%
+[ 14/36] ok   ent020_gru         f2_2020_2021      5.6min  eta  95.5min  sharpe -0.29 ann -5.78% mdd -36.16%
+[ 15/36] ok   ent020_gru         f3_2022_2026      9.3min  eta  90.7min  sharpe -0.07 ann -1.22% mdd -32.61%
+[ 16/36] ok   ent020_rnn         f1_2018_2019      6.2min  eta  83.7min  sharpe +0.29 ann +5.49% mdd -23.64%
+[ 17/36] ok   ent020_rnn         f3_2022_2026      6.1min  eta  81.7min  sharpe +0.03 ann +0.94% mdd -59.52%
+[ 18/36] ok   ent020_rnn         f2_2020_2021     11.5min  eta  76.3min  sharpe -0.55 ann -11.30% mdd -26.99%
+[ 19/36] ok   ent050_lstm        f1_2018_2019      5.0min  eta  69.9min  sharpe +0.22 ann +3.64% mdd -23.95%
+[ 20/36] ok   ent050_lstm        f2_2020_2021      7.4min  eta  66.9min  sharpe +0.08 ann +1.74% mdd -18.50%
+[ 21/36] ok   ent050_lstm        f3_2022_2026      8.8min  eta  62.1min  sharpe +0.27 ann +4.12% mdd -29.32%
+[ 22/36] ok   ent050_gru         f1_2018_2019      7.7min  eta  58.1min  sharpe +0.32 ann +5.63% mdd -24.60%
+[ 23/36] ok   ent050_gru         f2_2020_2021     13.5min  eta  56.8min  sharpe -0.17 ann -3.55% mdd -37.02%
+[ 24/36] ok   ent050_gru         f3_2022_2026     12.3min  eta  51.8min  sharpe -0.31 ann -4.95% mdd -34.87%
+[ 25/36] ok   ent050_rnn         f1_2018_2019      8.7min  eta  48.0min  sharpe +0.32 ann +6.17% mdd -24.29%
+[ 26/36] ok   ent050_rnn         f3_2022_2026     10.6min  eta  46.1min  sharpe +0.26 ann +4.90% mdd -40.72%
+[ 27/36] ok   ent050_rnn         f2_2020_2021     17.1min  eta  40.3min  sharpe -0.12 ann -3.41% mdd -35.20%
+[ 28/36] ok   ent100_lstm        f1_2018_2019      7.0min  eta  36.2min  sharpe +0.24 ann +4.47% mdd -25.21%
+[ 29/36] ok   ent100_lstm        f2_2020_2021      7.9min  eta  31.1min  sharpe -0.27 ann -5.27% mdd -22.35%
+[ 30/36] ok   ent100_lstm        f3_2022_2026      5.6min  eta  26.5min  sharpe +0.27 ann +4.00% mdd -28.55%
+[ 31/36] ok   ent100_gru         f1_2018_2019      5.8min  eta  21.7min  sharpe -0.03 ann -0.49% mdd -26.81%
+[ 32/36] ok   ent100_gru         f3_2022_2026      6.7min  eta  17.7min  sharpe +0.12 ann +1.93% mdd -31.22%
+[ 33/36] ok   ent100_rnn         f1_2018_2019      4.4min  eta  13.2min  sharpe -0.16 ann -2.80% mdd -28.39%
+[ 34/36] ok   ent100_gru         f2_2020_2021     18.6min  eta   8.9min  sharpe +0.18 ann +3.62% mdd -21.68%
+[ 35/36] ok   ent100_rnn         f2_2020_2021      7.7min  eta   4.4min  sharpe -0.13 ann -2.67% mdd -21.78%
+[ 36/36] ok   ent100_rnn         f3_2022_2026      6.1min  eta   0.0min  sharpe -0.47 ann -8.66% mdd -46.69%
+[done] 36/36 ok in 157.1 min

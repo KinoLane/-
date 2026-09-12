@@ -1,0 +1,19 @@
+[run ] 63 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_mu_sweep_20260912
+[run ] experiments: mu016_lstm, mu016_gru, mu016_rnn, mu018_lstm, mu018_gru, mu018_rnn, mu020_lstm, mu020_gru, mu020_rnn, mu022_lstm, mu022_gru, mu022_rnn, mu024_lstm, mu024_gru, mu024_rnn, mu026_lstm, mu026_gru, mu026_rnn, mu028_lstm, mu028_gru, mu028_rnn
+[run ] folds: f1_2018_2019, f2_2020_2021, f3_2022_2026 | workers=4
+[  1/63] ok   mu016_lstm         f1_2018_2019      9.6min  eta 604.3min  sharpe -0.07 ann -1.25% mdd -28.02%
+[  2/63] ok   mu016_gru          f1_2018_2019      9.6min  eta 298.2min  sharpe +0.25 ann +4.82% mdd -26.70%
+[  3/63] ok   mu016_lstm         f2_2020_2021     11.6min  eta 235.1min  sharpe -0.46 ann -8.66% mdd -24.56%
+[  4/63] ok   mu016_gru          f2_2020_2021      8.7min  eta 272.0min  sharpe +0.39 ann +9.64% mdd -22.52%
+[  5/63] ok   mu016_lstm         f3_2022_2026     18.8min  eta 219.7min  sharpe +0.39 ann +5.90% mdd -32.95%
+[  6/63] ok   mu016_rnn          f1_2018_2019      8.9min  eta 196.6min  sharpe -0.31 ann -7.76% mdd -43.79%
+[  7/63] ok   mu016_gru          f3_2022_2026     11.4min  eta 169.3min  sharpe +0.10 ann +2.36% mdd -35.45%
+[  8/63] ok   mu016_rnn          f2_2020_2021     10.9min  eta 201.6min  sharpe +0.10 ann +2.64% mdd -20.20%
+[  9/63] ok   mu018_lstm         f2_2020_2021      9.1min  eta 181.6min  sharpe -0.51 ann -9.86% mdd -28.22%
+[ 10/63] ok   mu018_lstm         f1_2018_2019     12.8min  eta 177.5min  sharpe -0.16 ann -3.07% mdd -30.19%
+[ 11/63] ok   mu016_rnn          f3_2022_2026     17.2min  eta 171.0min  sharpe +0.02 ann +0.45% mdd -39.42%
+[ 12/63] ok   mu018_gru          f1_2018_2019      8.9min  eta 166.6min  sharpe +0.47 ann +8.53% mdd -24.58%
+[ 13/63] FAIL mu018_rnn          f1_2018_2019      0.3min  eta 151.7min  MemoryError: Unable to allocate 213. MiB for an array with shape (4046, 810, 17) and data type float32
+[ 14/63] FAIL mu018_lstm         f3_2022_2026     15.2min  eta 155.8min  RuntimeError: [enforce fail at alloc_cpu.cpp:117] data. DefaultCPUAllocator: not enough memory: you tried to allocate 10867256 bytes.
+[ 15/63] ok   mu018_rnn          f2_2020_2021      9.3min  eta 156.1min  sharpe +1.01 ann +26.57% mdd -23.79%
+[ 16/63] ok   mu018_gru          f2_2020_2021     15.5min  eta 143.9min  sharpe -0.22 ann -4.38% mdd -19.24%

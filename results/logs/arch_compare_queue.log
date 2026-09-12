@@ -1,0 +1,100 @@
+﻿2026-09-12 00:41:54  queue start (pid=22016, ps=5.1.26100.9444)
+2026-09-12 00:41:54  START configs\csi500_arch_compare.yaml f1_2018_2019
+[run ] 5 jobs -> D:\金创\e2e_meancvar\results\csi500_arch_compare_20260913
+[run ] experiments: mu020_rnn, mu020_lstm, mu020_gru, mu020_mlp, mu020_rbfn
+[run ] folds: f1_2018_2019 | workers=4
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  1/5] ok   mu020_lstm         f1_2018_2019     12.9min  eta  52.1min  sharpe -0.45 ann -10.63% mdd -30.60%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  2/5] ok   mu020_rnn          f1_2018_2019     17.0min  eta  25.6min  sharpe +0.02 ann +0.40% mdd -37.86%
+[  3/5] ok   mu020_mlp          f1_2018_2019     18.7min  eta  12.5min  sharpe -0.54 ann -11.73% mdd -37.46%
+[  4/5] ok   mu020_gru          f1_2018_2019     21.4min  eta   5.4min  sharpe -0.94 ann -18.15% mdd -42.12%
+[  5/5] ok   mu020_rbfn         f1_2018_2019     17.6min  eta   0.0min  sharpe -0.55 ann -13.36% mdd -41.22%
+[done] 5/5 ok in 30.7 min
+2026-09-12 01:12:43  END   configs\csi500_arch_compare.yaml f1_2018_2019 exit=0 elapsed=31min
+2026-09-12 01:12:43  START configs\csi500_arch_compare.yaml f2_2020_2021
+[run ] 5 jobs -> D:\金创\e2e_meancvar\results\csi500_arch_compare_20260913
+[run ] experiments: mu020_rnn, mu020_lstm, mu020_gru, mu020_mlp, mu020_rbfn
+[run ] folds: f2_2020_2021 | workers=4
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  1/5] ok   mu020_lstm         f2_2020_2021     12.2min  eta  49.4min  sharpe +0.17 ann +3.75% mdd -22.12%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  2/5] ok   mu020_gru          f2_2020_2021     22.9min  eta  34.6min  sharpe +0.85 ann +16.78% mdd -19.32%
+[  3/5] ok   mu020_rnn          f2_2020_2021     30.4min  eta  20.4min  sharpe -0.00 ann -0.07% mdd -16.09%
+[  4/5] ok   mu020_mlp          f2_2020_2021     41.1min  eta  10.3min  sharpe +0.94 ann +21.14% mdd -20.54%
+[  5/5] ok   mu020_rbfn         f2_2020_2021     87.7min  eta   0.0min  sharpe +0.50 ann +12.24% mdd -21.74%
+[done] 5/5 ok in 100.1 min
+2026-09-12 02:52:58  END   configs\csi500_arch_compare.yaml f2_2020_2021 exit=0 elapsed=100min
+2026-09-12 02:52:58  START configs\csi500_arch_compare.yaml f3_2022_2026
+[run ] 5 jobs -> D:\金创\e2e_meancvar\results\csi500_arch_compare_20260913
+[run ] experiments: mu020_rnn, mu020_lstm, mu020_gru, mu020_mlp, mu020_rbfn
+[run ] folds: f3_2022_2026 | workers=4
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  1/5] ok   mu020_lstm         f3_2022_2026     22.4min  eta  90.3min  sharpe -0.65 ann -10.43% mdd -45.95%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\diffcp\cone_program.py:295: UserWarning: Solved/Inaccurate.
+  warnings.warn("Solved/Inaccurate.")
+[  2/5] ok   mu020_rnn          f3_2022_2026     25.8min  eta  39.0min  sharpe -0.07 ann -1.64% mdd -56.23%
+[  3/5] ok   mu020_gru          f3_2022_2026     36.1min  eta  24.2min  sharpe -0.39 ann -7.37% mdd -43.17%
+[  4/5] ok   mu020_mlp          f3_2022_2026     49.8min  eta  12.5min  sharpe -0.52 ann -9.80% mdd -46.39%
+[  5/5] ok   mu020_rbfn         f3_2022_2026     54.4min  eta   0.0min  sharpe -0.23 ann -4.17% mdd -38.03%
+[done] 5/5 ok in 77.0 min
+2026-09-12 04:10:07  END   configs\csi500_arch_compare.yaml f3_2022_2026 exit=0 elapsed=77min
+2026-09-12 04:10:07  START configs\sse50_arch_compare.yaml f1_2018_2019
+[run ] 5 jobs -> D:\金创\e2e_meancvar\results\sse50_arch_compare_20260913
+[run ] experiments: mu020_rnn, mu020_lstm, mu020_gru, mu020_mlp, mu020_rbfn
+[run ] folds: f1_2018_2019 | workers=4
+[  1/5] ok   mu020_lstm         f1_2018_2019      4.7min  eta  19.3min  sharpe +0.20 ann +3.01% mdd -22.30%
+[  2/5] ok   mu020_rnn          f1_2018_2019      8.7min  eta  13.2min  sharpe +0.15 ann +2.40% mdd -24.92%
+[  3/5] ok   mu020_mlp          f1_2018_2019      9.3min  eta   6.3min  sharpe -0.04 ann -0.50% mdd -21.54%
+[  4/5] ok   mu020_gru          f1_2018_2019      9.7min  eta   2.5min  sharpe -0.17 ann -2.84% mdd -31.74%
+[  5/5] ok   mu020_rbfn         f1_2018_2019     13.8min  eta   0.0min  sharpe +0.00 ann +0.04% mdd -25.81%
+[done] 5/5 ok in 18.6 min
+2026-09-12 04:28:54  END   configs\sse50_arch_compare.yaml f1_2018_2019 exit=0 elapsed=19min
+2026-09-12 04:28:54  START configs\sse50_arch_compare.yaml f2_2020_2021
+[run ] 5 jobs -> D:\金创\e2e_meancvar\results\sse50_arch_compare_20260913
+[run ] experiments: mu020_rnn, mu020_lstm, mu020_gru, mu020_mlp, mu020_rbfn
+[run ] folds: f2_2020_2021 | workers=4
+[  1/5] ok   mu020_lstm         f2_2020_2021      6.1min  eta  24.8min  sharpe -0.07 ann -1.17% mdd -17.58%
+[  2/5] ok   mu020_mlp          f2_2020_2021      6.7min  eta  10.2min  sharpe +0.17 ann +3.92% mdd -19.77%
+[  3/5] ok   mu020_gru          f2_2020_2021     10.2min  eta   6.9min  sharpe -0.50 ann -6.23% mdd -16.98%
+[  4/5] ok   mu020_rnn          f2_2020_2021     12.1min  eta   3.1min  sharpe -0.25 ann -5.83% mdd -27.38%
+[  5/5] ok   mu020_rbfn         f2_2020_2021     10.0min  eta   0.0min  sharpe +0.25 ann +4.58% mdd -16.62%
+[done] 5/5 ok in 16.2 min
+2026-09-12 04:45:12  END   configs\sse50_arch_compare.yaml f2_2020_2021 exit=0 elapsed=16min
+2026-09-12 04:45:12  START configs\sse50_arch_compare.yaml f3_2022_2026
+[run ] 5 jobs -> D:\金创\e2e_meancvar\results\sse50_arch_compare_20260913
+[run ] experiments: mu020_rnn, mu020_lstm, mu020_gru, mu020_mlp, mu020_rbfn
+[run ] folds: f3_2022_2026 | workers=4
+[  1/5] ok   mu020_lstm         f3_2022_2026      7.2min  eta  29.2min  sharpe +0.83 ann +10.13% mdd -18.47%
+[  2/5] ok   mu020_mlp          f3_2022_2026      7.8min  eta  11.9min  sharpe -0.66 ann -8.76% mdd -35.20%
+[  3/5] ok   mu020_rnn          f3_2022_2026     13.2min  eta   8.9min  sharpe +0.91 ann +11.13% mdd -17.66%
+[  4/5] ok   mu020_gru          f3_2022_2026     13.4min  eta   3.4min  sharpe +0.03 ann +0.42% mdd -23.82%
+[  5/5] ok   mu020_rbfn         f3_2022_2026     10.2min  eta   0.0min  sharpe +0.15 ann +2.16% mdd -21.80%
+[done] 5/5 ok in 17.5 min
+2026-09-12 05:02:47  END   configs\sse50_arch_compare.yaml f3_2022_2026 exit=0 elapsed=18min
+2026-09-12 05:02:47  queue done

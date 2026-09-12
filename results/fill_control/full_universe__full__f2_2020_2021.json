@@ -1,0 +1,32 @@
+{
+  "run": "results/csi300_full_universe",
+  "experiment": "full",
+  "fold": "f2_2020_2021",
+  "reference_metrics_ann": 0.004205137091680022,
+  "reference_metrics_sharpe": 0.02358699013268186,
+  "reference_metrics_holdings": 26.083333333333332,
+  "spread": {
+    "ann_return": 0.005202314311556933,
+    "ann_vol": 0.17831616053543253,
+    "sharpe": 0.02917466535806888,
+    "max_drawdown": -0.20209447434898697,
+    "cvar_95": 0.02528369431963343,
+    "holdings_mean": 26.083333333333332,
+    "eff_holdings_mean": 20.087384245396972,
+    "turnover_ann": 6.641391495893252,
+    "info_ratio": -0.6772637869539917,
+    "_seconds": 45.744882106781006
+  },
+  "waterfall": {
+    "ann_return": -0.002404361251425957,
+    "ann_vol": 0.19271492685698804,
+    "sharpe": -0.012476258537099263,
+    "max_drawdown": -0.24501408667904168,
+    "cvar_95": 0.02617830331374928,
+    "holdings_mean": 23.791666666666668,
+    "eff_holdings_mean": 15.73825550354546,
+    "turnover_ann": 7.378343642044394,
+    "info_ratio": -0.6730011809761602,
+    "_seconds": 57.76386737823486
+  }
+}

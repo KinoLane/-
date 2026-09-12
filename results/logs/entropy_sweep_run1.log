@@ -1,0 +1,14 @@
+[run ] 45 jobs -> D:\½ğ´´\e2e_meancvar\results\csi300_entropy_sweep_20260912
+[run ] experiments: ent000_lstm, ent000_gru, ent000_rnn, ent010_lstm, ent010_gru, ent010_rnn, ent020_lstm, ent020_gru, ent020_rnn, ent050_lstm, ent050_gru, ent050_rnn, ent100_lstm, ent100_gru, ent100_rnn
+[run ] folds: f1_2018_2019, f2_2020_2021, f3_2022_2026 | workers=2
+[  1/45] ok   ent000_lstm        f1_2018_2019      2.3min  eta 109.5min  sharpe +0.60 ann +15.85% mdd -28.72%
+[  2/45] ok   ent000_lstm        f2_2020_2021      2.8min  eta  64.8min  sharpe +0.99 ann +31.12% mdd -35.51%
+[  3/45] ok   ent000_lstm        f3_2022_2026      3.2min  eta  79.6min  sharpe -0.53 ann -11.57% mdd -59.79%
+[  4/45] ok   ent000_gru         f1_2018_2019      2.9min  eta  60.3min  sharpe +0.18 ann +3.19% mdd -24.36%
+[  5/45] ok   ent000_gru         f2_2020_2021      3.0min  eta  69.1min  sharpe +0.56 ann +14.36% mdd -19.79%
+[  6/45] ok   ent000_gru         f3_2022_2026      3.6min  eta  61.4min  sharpe -0.42 ann -6.96% mdd -44.75%
+[  7/45] ok   ent000_rnn         f1_2018_2019      2.6min  eta  61.2min  sharpe -0.16 ann -4.11% mdd -34.49%
+[  8/45] ok   ent000_rnn         f2_2020_2021      2.4min  eta  54.9min  sharpe +0.52 ann +13.56% mdd -25.46%
+[  9/45] ok   ent000_rnn         f3_2022_2026      6.3min  eta  70.4min  sharpe +0.00 ann +0.11% mdd -36.88%
+[ 10/45] FAIL ent010_lstm        f2_2020_2021      2.0min  eta  68.6min  MemoryError: Unable to allocate 4.85 MiB for an array with shape (635562, 1) and data type float64
+[ 11/45] FAIL ent010_lstm        f1_2018_2019      7.7min  eta  60.6min  MemoryError: Unable to allocate 4.85 MiB for an array with shape (635562, 1) and data type float64

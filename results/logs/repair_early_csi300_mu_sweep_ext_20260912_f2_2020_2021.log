@@ -1,0 +1,20 @@
+[run ] 14 jobs -> D:\金创\e2e_meancvar\results\csi300_mu_sweep_ext_20260912
+[run ] experiments: mu016_mlp, mu016_rbfn, mu018_mlp, mu018_rbfn, mu020_mlp, mu020_rbfn, mu022_mlp, mu022_rbfn, mu024_mlp, mu024_rbfn, mu026_mlp, mu026_rbfn, mu028_mlp, mu028_rbfn
+[run ] folds: f2_2020_2021 | workers=3
+[  1/14] ok   mu018_mlp          f2_2020_2021      9.6min  eta 125.7min  sharpe -0.19 ann -4.33% mdd -25.03%
+[  2/14] ok   mu016_mlp          f2_2020_2021     12.2min  eta  74.0min  sharpe +0.76 ann +18.50% mdd -21.31%
+[  3/14] ok   mu016_rbfn         f2_2020_2021     15.6min  eta  57.7min  sharpe +0.67 ann +16.93% mdd -20.92%
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\diffcp\cone_program.py:295: UserWarning: Solved/Inaccurate.
+  warnings.warn("Solved/Inaccurate.")
+[  4/14] ok   mu020_mlp          f2_2020_2021     14.7min  eta  67.6min  sharpe +0.38 ann +9.05% mdd -30.73%
+[  5/14] ok   mu022_mlp          f2_2020_2021      6.7min  eta  60.8min  sharpe -0.09 ann -1.71% mdd -22.87%
+[  6/14] ok   mu018_rbfn         f2_2020_2021     24.4min  eta  45.4min  sharpe +0.55 ann +13.47% mdd -19.67%
+[  7/14] ok   mu020_rbfn         f2_2020_2021     19.8min  eta  35.6min  sharpe +0.67 ann +16.91% mdd -20.90%
+[  8/14] ok   mu024_mlp          f2_2020_2021      9.2min  eta  32.4min  sharpe -0.40 ann -7.96% mdd -25.56%
+[  9/14] ok   mu026_mlp          f2_2020_2021      7.5min  eta  28.2min  sharpe +0.43 ann +10.16% mdd -21.67%
+[ 10/14] ok   mu022_rbfn         f2_2020_2021     26.0min  eta  23.9min  sharpe +0.66 ann +16.84% mdd -20.87%
+[ 11/14] ok   mu024_rbfn         f2_2020_2021     26.7min  eta  17.0min  sharpe +0.47 ann +10.45% mdd -18.96%
+[ 12/14] ok   mu028_mlp          f2_2020_2021     12.5min  eta  12.0min  sharpe +1.07 ann +33.16% mdd -29.76%
+[ 13/14] ok   mu026_rbfn         f2_2020_2021     23.5min  eta   5.7min  sharpe +0.66 ann +16.86% mdd -20.89%
+[ 14/14] ok   mu028_rbfn         f2_2020_2021     18.5min  eta   0.0min  sharpe +0.67 ann +16.86% mdd -20.88%
+[done] 14/14 ok in 80.7 min

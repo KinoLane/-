@@ -1,0 +1,16 @@
+[run ] 3 jobs -> D:\金创\e2e_meancvar\results\csi300_tree_baselines_20260912
+[run ] experiments: adaboost_mcvar, adaboost_mcvar_mu022, xgboost_mcvar_mu022
+[run ] folds: f3_2022_2026 | workers=3
+[tree] adaboost: cached 199 periods x 23281 samples
+[tree] xgboost: cached 199 periods x 23281 samples
+[tree] adaboost: cached 199 periods x 23281 samples
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+[  1/3] ok   xgboost_mcvar_mu022 f3_2022_2026      1.6min  eta   3.3min  sharpe -0.44 ann -10.05% mdd -39.33%
+[  2/3] ok   adaboost_mcvar     f3_2022_2026     15.2min  eta   7.7min  sharpe -0.42 ann -5.90% mdd -30.22%
+[  3/3] ok   adaboost_mcvar_mu022 f3_2022_2026     15.3min  eta   0.0min  sharpe -0.28 ann -4.00% mdd -30.22%
+[done] 3/3 ok in 15.4 min

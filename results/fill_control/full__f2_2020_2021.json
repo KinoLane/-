@@ -1,0 +1,32 @@
+{
+  "run": "results/_invalidated_extra_returns_prefixfillbug",
+  "experiment": "full",
+  "fold": "f2_2020_2021",
+  "reference_metrics_ann": 0.09619237127465063,
+  "reference_metrics_sharpe": 0.4604589904780254,
+  "reference_metrics_holdings": 119.0,
+  "spread": {
+    "ann_return": 0.09582630632939781,
+    "ann_vol": 0.20888924179044502,
+    "sharpe": 0.45874218082293355,
+    "max_drawdown": -0.19290301397258114,
+    "cvar_95": 0.03022160518578606,
+    "holdings_mean": 118.91666666666667,
+    "eff_holdings_mean": 20.92713974357258,
+    "turnover_ann": 6.011047165253556,
+    "info_ratio": 0.039150411944601456,
+    "_seconds": 7.962682485580444
+  },
+  "waterfall": {
+    "ann_return": 0.05768486783501303,
+    "ann_vol": 0.22083778109734314,
+    "sharpe": 0.2612092348889618,
+    "max_drawdown": -0.22586694020419917,
+    "cvar_95": 0.0320052474497599,
+    "holdings_mean": 10.666666666666666,
+    "eff_holdings_mean": 10.121591422061277,
+    "turnover_ann": 8.058317275373229,
+    "info_ratio": -0.17933394781864823,
+    "_seconds": 4.213067293167114
+  }
+}

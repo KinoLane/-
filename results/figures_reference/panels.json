@@ -1,0 +1,402 @@
+{
+  "reference_dir": "D:\\figures",
+  "panels": [
+    {
+      "reference": "Fig02",
+      "metric": "ann_vol",
+      "x": "target return tau",
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "source": "results/csi300_mu_sweep*",
+      "experiments": [
+        "mu016_rnn",
+        "mu018_rnn",
+        "mu020_rnn",
+        "mu022_rnn",
+        "mu024_rnn",
+        "mu026_rnn",
+        "mu028_rnn",
+        "mu016_lstm",
+        "mu018_lstm",
+        "mu020_lstm",
+        "mu022_lstm",
+        "mu024_lstm",
+        "mu026_lstm",
+        "mu028_lstm",
+        "mu016_gru",
+        "mu018_gru",
+        "mu020_gru",
+        "mu022_gru",
+        "mu024_gru",
+        "mu026_gru",
+        "mu028_gru",
+        "mu016_mlp",
+        "mu018_mlp",
+        "mu020_mlp",
+        "mu022_mlp",
+        "mu024_mlp",
+        "mu026_mlp",
+        "mu028_mlp",
+        "mu016_rbfn",
+        "mu018_rbfn",
+        "mu020_rbfn",
+        "mu022_rbfn",
+        "mu024_rbfn",
+        "mu026_rbfn",
+        "mu028_rbfn"
+      ],
+      "file": "fig02_std_vs_target.png"
+    },
+    {
+      "reference": "Fig03",
+      "metric": "sharpe",
+      "x": "target return tau",
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "source": "results/csi300_mu_sweep*",
+      "experiments": [
+        "mu016_rnn",
+        "mu018_rnn",
+        "mu020_rnn",
+        "mu022_rnn",
+        "mu024_rnn",
+        "mu026_rnn",
+        "mu028_rnn",
+        "mu016_lstm",
+        "mu018_lstm",
+        "mu020_lstm",
+        "mu022_lstm",
+        "mu024_lstm",
+        "mu026_lstm",
+        "mu028_lstm",
+        "mu016_gru",
+        "mu018_gru",
+        "mu020_gru",
+        "mu022_gru",
+        "mu024_gru",
+        "mu026_gru",
+        "mu028_gru",
+        "mu016_mlp",
+        "mu018_mlp",
+        "mu020_mlp",
+        "mu022_mlp",
+        "mu024_mlp",
+        "mu026_mlp",
+        "mu028_mlp",
+        "mu016_rbfn",
+        "mu018_rbfn",
+        "mu020_rbfn",
+        "mu022_rbfn",
+        "mu024_rbfn",
+        "mu026_rbfn",
+        "mu028_rbfn"
+      ],
+      "file": "fig03_sharpe_vs_target.png"
+    },
+    {
+      "reference": "Fig04",
+      "metric": "tracking_error",
+      "x": "target return tau",
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "source": "results/csi300_mu_sweep*",
+      "experiments": [
+        "mu016_rnn",
+        "mu018_rnn",
+        "mu020_rnn",
+        "mu022_rnn",
+        "mu024_rnn",
+        "mu026_rnn",
+        "mu028_rnn",
+        "mu016_lstm",
+        "mu018_lstm",
+        "mu020_lstm",
+        "mu022_lstm",
+        "mu024_lstm",
+        "mu026_lstm",
+        "mu028_lstm",
+        "mu016_gru",
+        "mu018_gru",
+        "mu020_gru",
+        "mu022_gru",
+        "mu024_gru",
+        "mu026_gru",
+        "mu028_gru",
+        "mu016_mlp",
+        "mu018_mlp",
+        "mu020_mlp",
+        "mu022_mlp",
+        "mu024_mlp",
+        "mu026_mlp",
+        "mu028_mlp",
+        "mu016_rbfn",
+        "mu018_rbfn",
+        "mu020_rbfn",
+        "mu022_rbfn",
+        "mu024_rbfn",
+        "mu026_rbfn",
+        "mu028_rbfn"
+      ],
+      "file": "fig04_tracking_error_vs_target.png"
+    },
+    {
+      "reference": "Fig5",
+      "metric": "cumulative net return, all folds chained",
+      "x": "time",
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "colors": "RNN black, LSTM red, GRU green, MLP blue, RBFN purple",
+      "source": "results/csi300_mu_sweep*",
+      "experiments": [
+        "mu020_rnn",
+        "mu020_lstm",
+        "mu020_gru",
+        "mu020_mlp",
+        "mu020_rbfn"
+      ],
+      "spans": {
+        "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "MLP+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "RBFN+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+      },
+      "file": "fig05_cumulative_return_mu020.png"
+    },
+    {
+      "reference": "Fig8",
+      "metric": "pooled Sharpe vs achieved portfolio entropy",
+      "x": "mean achieved Shannon entropy (nats) of each lambda level",
+      "lambda_levels": [
+        0.0,
+        0.001,
+        0.002,
+        0.005,
+        0.01
+      ],
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR"
+      ],
+      "source": "results/csi300_entropy_sweep*",
+      "experiments": [
+        "ent000_rnn",
+        "ent010_rnn",
+        "ent020_rnn",
+        "ent050_rnn",
+        "ent100_rnn",
+        "ent000_lstm",
+        "ent010_lstm",
+        "ent020_lstm",
+        "ent050_lstm",
+        "ent100_lstm",
+        "ent000_gru",
+        "ent010_gru",
+        "ent020_gru",
+        "ent050_gru",
+        "ent100_gru"
+      ],
+      "experiments_not_run": [],
+      "file": "fig08_entropy_sharpe_ratio.png"
+    },
+    {
+      "reference": "Fig9",
+      "metric": "cumulative net return by entropy level",
+      "x": "time",
+      "panels": [
+        "(a) cumulative return, no entropy term",
+        "(b) cumulative return, default entropy term"
+      ],
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR"
+      ],
+      "spans": {
+        "(a) cumulative return, no entropy term": {
+          "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+          "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+          "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+        },
+        "(b) cumulative return, default entropy term": {
+          "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+          "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+          "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+        }
+      },
+      "source": "results/csi300_entropy_sweep*",
+      "experiments": [
+        "ent000_rnn",
+        "ent000_lstm",
+        "ent000_gru",
+        "ent020_rnn",
+        "ent020_lstm",
+        "ent020_gru"
+      ],
+      "file": "fig09_entropy_cumulative_return.png"
+    },
+    {
+      "reference": "Fig10",
+      "metric": "realised monthly net return",
+      "window": [
+        "2023-08-01",
+        "2024-06-30"
+      ],
+      "target_returns": [
+        0.016,
+        0.028
+      ],
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "assumption": "the reference does not reveal what distinguishes its two panels; we show the lowest and the highest target return of the sweep in the same 11 month window",
+      "source": "results/csi300_mu_sweep*",
+      "experiments": [
+        "mu016_rnn",
+        "mu016_lstm",
+        "mu016_gru",
+        "mu016_mlp",
+        "mu016_rbfn",
+        "mu028_rnn",
+        "mu028_lstm",
+        "mu028_gru",
+        "mu028_mlp",
+        "mu028_rbfn"
+      ],
+      "file": "fig10_out_of_sample_return.png"
+    },
+    {
+      "reference": "Fig11",
+      "metric": "cumulative net return",
+      "x": "time",
+      "market": "CSI 500 (stand-in for the reference's IBrX50)",
+      "target_return": 0.02,
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "source": "results/csi500_arch_compare* + results/csi500_reference*",
+      "experiments": [
+        "mu020_rnn",
+        "mu020_lstm",
+        "mu020_gru",
+        "mu020_mlp",
+        "mu020_rbfn"
+      ],
+      "unsupported_architectures": [],
+      "spans": {
+        "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "MLP+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "RBFN+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+      },
+      "file": "fig11_csi500_cumulative_return.png"
+    },
+    {
+      "reference": "Fig12",
+      "metric": "cumulative net return",
+      "x": "time",
+      "market": "SSE 50",
+      "target_return": 0.02,
+      "series": [
+        "RNN+MCVaR",
+        "LSTM+MCVaR",
+        "GRU+MCVaR",
+        "MLP+MCVaR",
+        "RBFN+MCVaR"
+      ],
+      "source": "results/sse50_arch_compare* + results/sse50_reference*",
+      "experiments": [
+        "mu020_rnn",
+        "mu020_lstm",
+        "mu020_gru",
+        "mu020_mlp",
+        "mu020_rbfn"
+      ],
+      "unsupported_architectures": [],
+      "spans": {
+        "RNN+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "GRU+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "MLP+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "RBFN+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+      },
+      "file": "fig12_sse50_cumulative_return.png"
+    },
+    {
+      "reference": "Fig13",
+      "metric": "cumulative net return",
+      "x": "time",
+      "target_return": 0.02,
+      "series": [
+        "ADA+MCVaR",
+        "LSTM+MCVaR",
+        "XGB+MCVaR"
+      ],
+      "source": "results/csi300_mu_sweep* + results/csi300_tree_baselines*",
+      "experiments": [
+        "adaboost_mcvar",
+        "mu020_lstm",
+        "xgboost_mcvar"
+      ],
+      "spans": {
+        "ADA+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "XGB+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+      },
+      "file": "fig13_adaboost_xgboost_mu020.png"
+    },
+    {
+      "reference": "Fig14",
+      "metric": "cumulative net return",
+      "x": "time",
+      "target_return": 0.022,
+      "series": [
+        "ADA+MCVaR",
+        "LSTM+MCVaR",
+        "XGB+MCVaR"
+      ],
+      "source": "results/csi300_mu_sweep* + results/csi300_tree_baselines*",
+      "experiments": [
+        "adaboost_mcvar_mu022",
+        "mu022_lstm",
+        "xgboost_mcvar_mu022"
+      ],
+      "spans": {
+        "ADA+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
+        "XGB+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
+      },
+      "file": "fig14_adaboost_xgboost_mu022.png"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+# ---------------------------------------------------------------------------
+# End-to-end differentiable Mean-CVaR portfolio learning -- CSI 300 study
+#
+# Regression check for the deficit-fill fix in the selection layer
+# (``raw_caps`` + score-ordered waterfall, see README section 11.7(B)).
+#
+# The widening triggered in exactly 4 of the 55 periods of
+# ``full_musigma / f3_2022_2026`` of run csi300_score_rule_20260911, so this
+# config re-runs *that one job* with the fixed fill, in its own run directory,
+# leaving the supplementary run untouched.  Everything else (seed, epochs,
+# folds, hyper-parameters) is copied verbatim from
+# configs/csi300_score_rule.yaml, so the two jobs differ only in the fill rule.
+#
+#   python scripts/02_run_experiments.py --config configs/csi300_fill_check.yaml \
+#       --workers 1 --threads-per-worker 3
+#
+# Every run directory stores a copy of the resolved configuration.
+# ---------------------------------------------------------------------------
+
+data:
+  root: "D:\\金创\\findata"
+  index: "csi300"
+  # keep the 120 most liquid index members at each rebalance date (the union of
+  # all ever-constituents is 810 names)
+  top_liquidity: 120
+  exclude_st: true
+  exclude_limit_locked: true
+  start_date: null
+  end_date: null
+
+features:
+  lookback: 60
+  clip: 3.0
+  short_window: 5
+  mid_window: 20
+  long_window: 60
+
+model:
+  hidden_size: 64
+  num_layers: 1
+  dropout: 0.1
+  head_hidden: 64
+  scenario_mode: "gaussian"
+  num_scenarios: 60
+  sigma_init: 0.08
+  sigma_min: 0.005
+  sigma_max: 0.60
+  selection: "sparsemax"
+  topk: 25
+  temperature_init: 1.0
+  learn_temperature: true
+
+opt:
+  alpha: 0.95
+  gamma: 0.1
+  lam_turnover: 0.0015
+  lam_div: 0.002
+  diversify: "entropy"
+  y_max: 0.10
+  solver: "SCS"
+  solver_kwargs: {}
+  differentiable: true
+
+loss:
+  l_pred: 0.1
+  l_decision: 1.0
+  l_tail: 0.5
+  l_turnover: 1.0
+  l_sparse: 0.1
+  pred_kind: "nll"
+  annual_scale: 12.0
+  cost_per_unit_turnover: 0.0015
+
+train:
+  epochs: 30
+  # periods per optimiser step (each period keeps one diffcp graph alive)
+  batch_size: 4
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_clip: 5.0
+  patience: 6
+  min_epochs: 4
+  device: "cpu"
+  seed: 20240101
+  num_threads: 3
+  max_train_periods_per_epoch: 0
+  val_metric: "loss"
+
+backtest:
+  cost_bps: 15.0
+  rebalance: "monthly"
+  rebalance_every: 20
+  return_kind: "daily"
+
+# ---------------------------------------------------------------------------
+# walk-forward folds: expanding training window, 1 year validation,
+# 2-5 year out-of-sample test window
+# ---------------------------------------------------------------------------
+folds:
+  - name: "f3_2022_2026"
+    train_start: "2010-01-01"
+    train_end: "2020-12-31"
+    val_start: "2021-01-01"
+    val_end: "2021-12-31"
+    test_start: "2022-01-01"
+    test_end: "2026-12-31"
+
+experiments:
+  - "full_musigma"
+
+results_dir: "results"
+run_name: "csi300_fill_fix_check"

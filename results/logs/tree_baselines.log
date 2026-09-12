@@ -1,0 +1,87 @@
+[run ] 12 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_tree_baselines_20260912
+[run ] experiments: adaboost_mcvar, xgboost_mcvar, adaboost_mcvar_mu022, xgboost_mcvar_mu022
+[run ] folds: f1_2018_2019, f2_2020_2021, f3_2022_2026 | workers=2
+[  1/12] FAIL adaboost_mcvar     f2_2020_2021      0.1min  eta   3.3min  MemoryError: Unable to allocate 425. MiB for an array with shape (4046, 810, 17) and data type float64
+[  2/12] FAIL adaboost_mcvar     f1_2018_2019      0.1min  eta   1.5min  MemoryError: Unable to allocate 3.13 MiB for an array with shape (4046, 810) and data type bool
+[tree] adaboost: cached 199 periods x 23281 samples
+[tree] xgboost: cached 199 periods x 23281 samples
+[  3/12] ok   xgboost_mcvar      f1_2018_2019      1.2min  eta   4.4min  sharpe -0.45 ann -11.28% mdd -47.52%
+[tree] xgboost: cached 199 periods x 23281 samples
+[  4/12] ok   xgboost_mcvar      f2_2020_2021      1.1min  eta   5.2min  sharpe +0.79 ann +23.74% mdd -29.71%
+[tree] xgboost: cached 199 periods x 23281 samples
+[  5/12] ok   xgboost_mcvar      f3_2022_2026      2.1min  eta   6.6min  sharpe -0.58 ann -9.31% mdd -34.26%
+[  6/12] FAIL adaboost_mcvar_mu022 f1_2018_2019      0.3min  eta   5.0min  MemoryError: Unable to allocate 12.5 MiB for an array with shape (4046, 810) and data type int32
+[  7/12] FAIL adaboost_mcvar_mu022 f2_2020_2021      0.0min  eta   3.6min  MemoryError: Unable to allocate 25.0 MiB for an array with shape (4046, 810) and data type float64
+[  8/12] FAIL adaboost_mcvar_mu022 f3_2022_2026      0.0min  eta   2.5min  MemoryError: Unable to allocate 25.0 MiB for an array with shape (4046, 810) and data type float64
+[tree] xgboost: cached 199 periods x 23281 samples
+[  9/12] ok   xgboost_mcvar_mu022 f1_2018_2019      1.1min  eta   2.0min  sharpe -0.65 ann -14.45% mdd -49.87%
+[tree] xgboost: cached 199 periods x 23281 samples
+[ 10/12] ok   xgboost_mcvar_mu022 f2_2020_2021      1.1min  eta   1.4min  sharpe +0.79 ann +23.77% mdd -29.71%
+[tree] xgboost: cached 199 periods x 23281 samples
+Unhandled exception caught in c10/util/AbortHandler.h
+00007FFFF220A0B600007FFFF21FF7F0 torch_python.dll!torch::autograd::THPCppFunction_requires_grad [<unknown file> @ <unknown line number>]
+00007FF8F58F218700007FF8F58F2170 ucrtbase.dll!terminate [<unknown file> @ <unknown line number>]
+00007FF6A0E919D2 <unknown symbol address> python.exe!<unknown symbol> [<unknown file> @ <unknown line number>]
+00007FF8F5A9EF8300007FF8F5A9ED90 KERNELBASE.dll!UnhandledExceptionFilter [<unknown file> @ <unknown line number>]
+00007FF8F81E9BA000007FF8F81E7150 ntdll.dll!strncpy [<unknown file> @ <unknown line number>]
+00007FF8F81A470300007FF8F81A4670 ntdll.dll!_C_specific_handler [<unknown file> @ <unknown line number>]
+00007FF8F81E54FF00007FF8F81E5460 ntdll.dll!_chkstk [<unknown file> @ <unknown line number>]
+00007FF8F814BD2500007FF8F814B6D0 ntdll.dll!RtlWow64GetCurrentMachine [<unknown file> @ <unknown line number>]
+00007FF8F808F88D00007FF8F808F700 ntdll.dll!RtlRaiseException [<unknown file> @ <unknown line number>]
+00007FF8F5A541CA00007FF8F5A54140 KERNELBASE.dll!RaiseException [<unknown file> @ <unknown line number>]
+00007FF8E4C752C700007FF8E4C75230 VCRUNTIME140.dll!CxxThrowException [<unknown file> @ <unknown line number>]
+00007FF849CA32BF <unknown symbol address> _cvxcore.cp311-win_amd64.pyd!<unknown symbol> [<unknown file> @ <unknown line number>]
+00007FF849D09CCD00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CEA60800007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF7E4300007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CE8F9B00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849D027CA00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF8C0F00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF951000007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF927A00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849D001C300007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF8D0F00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF91AF00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF927A00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF927A00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CF927A00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849D08DFD00007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849D0967500007FF849CE5FA0 _cvxcore.cp311-win_amd64.pyd!PyInit__cvxcore [<unknown file> @ <unknown line number>]
+00007FF849CE4C0C <unknown symbol address> _cvxcore.cp311-win_amd64.pyd!<unknown symbol> [<unknown file> @ <unknown line number>]
+00007FF849CE58D2 <unknown symbol address> _cvxcore.cp311-win_amd64.pyd!<unknown symbol> [<unknown file> @ <unknown line number>]
+00007FF88222F15100007FF88222EB3C python311.dll!PyArg_ParseTuple [<unknown file> @ <unknown line number>]
+00007FF8822AFDF100007FF8822AFD4C python311.dll!PyObject_Call [<unknown file> @ <unknown line number>]
+00007FF8822AFA1500007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF8822263A100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822AF98500007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF8822263A100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822277BF00007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822AF98500007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF88222766100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822AFA2D00007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF88222766100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822AFA2D00007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF8822263A100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822B817300007FF8822B8100 python311.dll!PyObject_FastCallDictTstate [<unknown file> @ <unknown line number>]
+00007FF88234B83700007FF88234B7B8 python311.dll!PyObject_Call_Prepend [<unknown file> @ <unknown line number>]
+00007FF88234B76400007FF88234AB90 python311.dll!PyLong_FromBytes [<unknown file> @ <unknown line number>]
+00007FF88222CBBB00007FF88222C840 python311.dll!PyObject_MakeTpCall [<unknown file> @ <unknown line number>]
+00007FF88225924F00007FF882258FC0 python311.dll!PyObject_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF88225A89500007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF8822263A100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822AFA2D00007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF8822263A100007FF882226240 python311.dll!PyFunction_Vectorcall [<unknown file> @ <unknown line number>]
+00007FF8822AFA2D00007FF8822AF618 python311.dll!PyObject_CallObject [<unknown file> @ <unknown line number>]
+00007FF88225F5B600007FF88225A110 python311.dll!PyEval_EvalFrameDefault [<unknown file> @ <unknown line number>]
+00007FF8822B7A9F00007FF8822B78AC python311.dll!PySequence_Check [<unknown file> @ <unknown line number>]
+00007FF8822C364800007FF8822C35A8 python311.dll!PyEval_EvalCode [<unknown file> @ <unknown line number>]
+00007FF8822C3A5100007FF8822C3908 python311.dll!PyEval_GetBuiltins [<unknown file> @ <unknown line number>]
+00007FF8822C39CE00007FF8822C3908 python311.dll!PyEval_GetBuiltins [<unknown file> @ <unknown line number>]
+
+[ 11/12] FAIL adaboost_mcvar     f3_2022_2026      7.5min  eta   0.7min  MemoryError: Unable to allocate 2.57 MiB for an array with shape (19227, 35) and data type float32

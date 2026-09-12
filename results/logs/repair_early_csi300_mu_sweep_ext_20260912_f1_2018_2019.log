@@ -1,0 +1,18 @@
+[run ] 14 jobs -> D:\½ð´´\e2e_meancvar\results\csi300_mu_sweep_ext_20260912
+[run ] experiments: mu016_mlp, mu016_rbfn, mu018_mlp, mu018_rbfn, mu020_mlp, mu020_rbfn, mu022_mlp, mu022_rbfn, mu024_mlp, mu024_rbfn, mu026_mlp, mu026_rbfn, mu028_mlp, mu028_rbfn
+[run ] folds: f1_2018_2019 | workers=3
+[  1/14] ok   mu016_mlp          f1_2018_2019      7.0min  eta  92.0min  sharpe +0.08 ann +1.38% mdd -26.51%
+[  2/14] ok   mu016_rbfn         f1_2018_2019     10.2min  eta  61.7min  sharpe +0.01 ann +0.18% mdd -36.00%
+[  3/14] ok   mu018_mlp          f1_2018_2019     10.8min  eta  39.8min  sharpe -0.08 ann -1.86% mdd -38.83%
+[  4/14] ok   mu018_rbfn         f1_2018_2019      9.9min  eta  42.5min  sharpe +0.01 ann +0.18% mdd -36.00%
+[  5/14] ok   mu020_rbfn         f1_2018_2019     10.0min  eta  37.6min  sharpe +0.01 ann +0.18% mdd -36.00%
+[  6/14] ok   mu020_mlp          f1_2018_2019     11.9min  eta  29.6min  sharpe +0.24 ann +4.11% mdd -28.45%
+[  7/14] ok   mu022_mlp          f1_2018_2019      8.6min  eta  25.5min  sharpe +0.10 ann +1.99% mdd -28.58%
+[  8/14] ok   mu024_mlp          f1_2018_2019      8.1min  eta  22.7min  sharpe +0.07 ann +1.17% mdd -29.09%
+[  9/14] ok   mu022_rbfn         f1_2018_2019     10.0min  eta  17.1min  sharpe +0.01 ann +0.18% mdd -36.00%
+[ 10/14] ok   mu024_rbfn         f1_2018_2019      9.9min  eta  14.2min  sharpe +0.01 ann +0.18% mdd -36.00%
+[ 11/14] ok   mu026_mlp          f1_2018_2019      8.9min  eta  10.7min  sharpe +0.49 ann +9.44% mdd -27.69%
+[ 12/14] ok   mu026_rbfn         f1_2018_2019      9.9min  eta   6.8min  sharpe +0.01 ann +0.18% mdd -36.00%
+[ 13/14] ok   mu028_mlp          f1_2018_2019     10.2min  eta   3.5min  sharpe +0.23 ann +4.65% mdd -29.95%
+[ 14/14] ok   mu028_rbfn         f1_2018_2019      9.4min  eta   0.0min  sharpe +0.01 ann +0.18% mdd -36.00%
+[done] 14/14 ok in 48.7 min

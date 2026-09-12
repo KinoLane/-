@@ -1,0 +1,8 @@
+[run ] 4 jobs -> D:\½ğ´´\e2e_meancvar\results\sse50_reference_20260912
+[run ] experiments: ew, meancvar_hist, mu020_lstm, full
+[run ] folds: f1_2018_2019 | workers=3
+[  1/4] ok   ew                 f1_2018_2019      0.1min  eta   0.6min  sharpe +0.01 ann +0.11% mdd -27.97%
+[  2/4] ok   meancvar_hist      f1_2018_2019      0.1min  eta   0.2min  sharpe -0.43 ann -8.46% mdd -36.87%
+[  3/4] ok   mu020_lstm         f1_2018_2019      3.4min  eta   1.2min  sharpe +0.20 ann +3.01% mdd -22.30%
+[  4/4] ok   full               f1_2018_2019      5.3min  eta   0.0min  sharpe -0.09 ann -1.33% mdd -27.04%
+[done] 4/4 ok in 5.5 min

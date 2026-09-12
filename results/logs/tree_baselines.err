@@ -1,0 +1,27 @@
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+D:\金创\e2e_meancvar\.venv\Lib\site-packages\cvxpy\reductions\solvers\solving_chain.py:235: UserWarning: Your problem has too many parameters for efficient DPP compilation. We suggest setting 'ignore_dpp = True'.
+  warnings.warn(
+Traceback (most recent call last):
+  File "C:\Users\13248\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\queues.py", line 246, in _feed
+    send_bytes(obj)
+  File "C:\Users\13248\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\connection.py", line 184, in send_bytes
+    self._check_closed()
+  File "C:\Users\13248\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\connection.py", line 137, in _check_closed
+    raise OSError("handle is closed")
+OSError: handle is closed
+Traceback (most recent call last):
+  File "D:\金创\e2e_meancvar\scripts\02_run_experiments.py", line 194, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\金创\e2e_meancvar\scripts\02_run_experiments.py", line 149, in main
+    r = fut.result()
+        ^^^^^^^^^^^^
+  File "C:\Users\13248\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\13248\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.

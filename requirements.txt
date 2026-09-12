@@ -1,0 +1,45 @@
+# Reference environment -- these are the exact versions that produced the results
+# in README 9.1-9.13 (`pip list` of the run machine: Windows 11, CPU-only).
+#
+# Python 3.11 is required because diffcp (the differentiation back-end of
+# cvxpylayers) ships Windows wheels only up to CPython 3.11.
+#
+#   uv venv --python 3.11 .venv
+#   uv pip install --python .venv\Scripts\python.exe -r requirements.txt
+#
+# torch: install the CPU wheel to keep the download small
+#   uv pip install --python .venv\Scripts\python.exe torch==2.14.0 \
+#       --index-url https://download.pytorch.org/whl/cpu
+
+# --- core -------------------------------------------------------------------
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+pyarrow==25.0.1
+PyYAML==6.0.3
+
+# --- learning ---------------------------------------------------------------
+torch==2.14.0           # the wheel resolved on the run machine was 2.14.0+cpu
+scikit-learn==1.6.1
+xgboost==3.2.0          # only needed by the tree baselines (`kind: "tree"`)
+
+# --- differentiable optimisation --------------------------------------------
+cvxpy==1.4.2
+cvxpylayers==0.1.6
+diffcp==1.0.23          # last release with a CPython 3.11 Windows wheel
+# cvxpy pulls in the conic solvers; the layer solves with `opt.solver` = SCS
+clarabel==0.11.1
+ecos==2.0.14
+scs==3.3.1
+
+# --- figures / reports ------------------------------------------------------
+matplotlib==3.11.1
+seaborn==0.13.2
+joblib==1.6.0
+
+# --- tooling ----------------------------------------------------------------
+tqdm==4.70.0
+pytest==9.1.1           # `python -m pytest tests -q` -> 134 passed
+
+# --- optional ---------------------------------------------------------------
+psutil==7.2.2           # only used by scripts/00_smoke_train.py for a memory check
