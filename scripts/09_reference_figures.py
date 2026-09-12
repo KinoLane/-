@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -726,6 +727,8 @@ README_TEMPLATE = """# 复刻图（用我们自己的实验结果画）
 
 对照图在 `{ref}`。每张图的画布尺寸、字号、图例位置、配色都照抄对照图，
 **图里的每个数字都来自本仓库 `results/` 下自己跑的 run**，没有引用对照图的任何数值。
+对照用的确切文件名记在 `panels.json` 的 `reference_file` 字段里 —— 比对前先按该字段
+确认文件名，避免拿错版本（这些面板在别处可能存在旧草稿副本）。
 
 | 本图 | 对照图 | 画的是什么 | 数据来源（run 目录） |
 |------|--------|-----------|---------------------|
@@ -838,16 +841,44 @@ python scripts/02_run_experiments.py --config configs/sse50_reference.yaml --wor
 python scripts/09_reference_figures.py --out results/figures_reference
 ```
 
-`panels.json` 记录了每张图对应的实验名、指标定义、数据来源目录，便于逐条核对。
+`panels.json` 记录了每张图对应的实验名、指标定义、数据来源目录，以及对照图在
+`--reference-dir` 里的确切文件名（`reference_file` 字段），便于逐条核对。
 """
+
+
+def reference_files(reference_dir: str) -> dict[int, str]:
+    """``{panel number: file name}`` of the reference folder, keyed by ``Fig`` number.
+
+    The reference panels are documentation only, but naming the exact file next to each
+    of our panels removes the ambiguity that comes from having several copies of these
+    figures lying around (an older draft is easy to mistake for the delivered one).
+    """
+    files: dict[int, str] = {}
+    try:
+        entries = list(Path(reference_dir).iterdir())
+    except OSError:
+        return files
+    for path in entries:
+        match = re.search(r"Fig(\d+)", path.name)
+        if path.is_file() and match:
+            files.setdefault(int(match.group(1)), path.name)
+    return files
 
 
 def write_docs(out_dir: Path, reference_dir: str) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "README.md").write_text(
         README_TEMPLATE.format(ref=reference_dir), encoding="utf-8")
+    ref_files = reference_files(reference_dir)
+    panels = []
+    for panel in PANELS:
+        entry = dict(panel)
+        match = re.match(r"Fig(\d+)$", str(entry.get("reference", "")))
+        if match and int(match.group(1)) in ref_files:
+            entry["reference_file"] = ref_files[int(match.group(1))]
+        panels.append(entry)
     (out_dir / "panels.json").write_text(
-        json.dumps({"reference_dir": reference_dir, "panels": PANELS},
+        json.dumps({"reference_dir": reference_dir, "panels": panels},
                    ensure_ascii=False, indent=2, default=str), encoding="utf-8")
     print(f"  wrote {out_dir / 'README.md'} and {out_dir / 'panels.json'}")
 

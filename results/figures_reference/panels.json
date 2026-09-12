@@ -50,7 +50,8 @@
         "mu026_rbfn",
         "mu028_rbfn"
       ],
-      "file": "fig02_std_vs_target.png"
+      "file": "fig02_std_vs_target.png",
+      "reference_file": "LSTM_MCVaR_Fig2_Standard_Deviation.png"
     },
     {
       "reference": "Fig03",
@@ -101,7 +102,8 @@
         "mu026_rbfn",
         "mu028_rbfn"
       ],
-      "file": "fig03_sharpe_vs_target.png"
+      "file": "fig03_sharpe_vs_target.png",
+      "reference_file": "LSTM_MCVaR_Fig3_Sharpe_Ratio.png"
     },
     {
       "reference": "Fig04",
@@ -152,7 +154,8 @@
         "mu026_rbfn",
         "mu028_rbfn"
       ],
-      "file": "fig04_tracking_error_vs_target.png"
+      "file": "fig04_tracking_error_vs_target.png",
+      "reference_file": "LSTM_MCVaR_Fig4_Tracking_Error.png"
     },
     {
       "reference": "Fig5",
@@ -181,7 +184,8 @@
         "MLP+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
         "RBFN+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
       },
-      "file": "fig05_cumulative_return_mu020.png"
+      "file": "fig05_cumulative_return_mu020.png",
+      "reference_file": "LSTM_MCVaR_Fig5_Cumulative_Return_Mu_0_02.png"
     },
     {
       "reference": "Fig8",
@@ -218,7 +222,8 @@
         "ent100_gru"
       ],
       "experiments_not_run": [],
-      "file": "fig08_entropy_sharpe_ratio.png"
+      "file": "fig08_entropy_sharpe_ratio.png",
+      "reference_file": "LSTM_MCVaR_Fig8_Entropy_Sharpe_Ratio.png"
     },
     {
       "reference": "Fig9",
@@ -254,7 +259,8 @@
         "ent020_lstm",
         "ent020_gru"
       ],
-      "file": "fig09_entropy_cumulative_return.png"
+      "file": "fig09_entropy_cumulative_return.png",
+      "reference_file": "LSTM_MCVaR_Fig9_Entropy_Cumulative_Return.png"
     },
     {
       "reference": "Fig10",
@@ -288,7 +294,8 @@
         "mu028_mlp",
         "mu028_rbfn"
       ],
-      "file": "fig10_out_of_sample_return.png"
+      "file": "fig10_out_of_sample_return.png",
+      "reference_file": "LSTM_MCVaR_Fig10_Out_of_Sample_Return.png"
     },
     {
       "reference": "Fig11",
@@ -319,7 +326,8 @@
         "MLP+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
         "RBFN+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
       },
-      "file": "fig11_csi500_cumulative_return.png"
+      "file": "fig11_csi500_cumulative_return.png",
+      "reference_file": "LSTM_MCVaR_Fig11_IBrX50_Cumulative_Return.png"
     },
     {
       "reference": "Fig12",
@@ -350,7 +358,8 @@
         "MLP+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
         "RBFN+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
       },
-      "file": "fig12_sse50_cumulative_return.png"
+      "file": "fig12_sse50_cumulative_return.png",
+      "reference_file": "LSTM_MCVaR_Fig12_SSE50_Cumulative_Return.png"
     },
     {
       "reference": "Fig13",
@@ -373,7 +382,8 @@
         "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
         "XGB+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
       },
-      "file": "fig13_adaboost_xgboost_mu020.png"
+      "file": "fig13_adaboost_xgboost_mu020.png",
+      "reference_file": "LSTM_MCVaR_Fig13_Ada_XGB_Comparison_Mu_0_02.png"
     },
     {
       "reference": "Fig14",
@@ -396,7 +406,8 @@
         "LSTM+MCVaR": "2018-01-03..2026-08-03 (2081 days)",
         "XGB+MCVaR": "2018-01-03..2026-08-03 (2081 days)"
       },
-      "file": "fig14_adaboost_xgboost_mu022.png"
+      "file": "fig14_adaboost_xgboost_mu022.png",
+      "reference_file": "LSTM_MCVaR_Fig14_Ada_XGB_Comparison_Mu_0_022.png"
     }
   ]
 }
